@@ -3,7 +3,7 @@
 ## Using Library
 
 
-+ [Bard-API] (https://github.com/dsdanielpark/Bard-API/)
++ Bard-API (https://github.com/dsdanielpark/Bard-API/)
 
 ### Thanks
 
