@@ -1,6 +1,7 @@
 
 import os
 import json
+from Commands import help
 from bardapi import Bard
 
 if os.path.exists('token.json') :
@@ -21,18 +22,25 @@ while True:
         print('token is not correct plz check token.json file\r\n')
         exit()
     try:
-         print('if you want end talk please input exit_app\r\n')
-         input_text = input('please input anything\r\n')
+         print('if you want end talk please input exit_app\r\nplease input anything\r\n')
+         input_text = input(':')
          print()
          if input_text == 'exit_app' :
              print('terminate the application.\r\n')
              exit()
+         elif input_text == '- help' :
+          help.receive_command()
+          continue
+         elif input_text == '' :
+          print('plz any text input\r\n')
+          continue
          else :
           answer = bard.get_answer(input_text)
           print()
           print(answer['content'])
           print()
          continue
+             
     except Exception as e :
         print('Sorry, there was an unexplained error. Terminate the application.\r\n')
         print(e)

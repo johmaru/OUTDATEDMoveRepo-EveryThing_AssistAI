@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9a0d1c8f-4b52-41e7-8443-f6be0d8ce446</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>EveryThing_Assist.py</StartupFile>
+    <StartupFile>Core\EveryThing_Assist.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,7 +23,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EveryThing_Assist.py" />
+    <Compile Include="Commands\help.py" />
+    <Compile Include="Core\EveryThing_Assist.py" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
@@ -35,6 +36,10 @@
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X64</Architecture>
     </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
+    <Folder Include="Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
