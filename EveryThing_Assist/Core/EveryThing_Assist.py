@@ -31,6 +31,9 @@ while True:
          elif input_text == '- help' :
           help.receive_command()
           continue
+         elif input_text == '- h' :
+          help.receive_command()
+          continue
          elif input_text == '' :
           print('plz any text input\r\n')
           continue
