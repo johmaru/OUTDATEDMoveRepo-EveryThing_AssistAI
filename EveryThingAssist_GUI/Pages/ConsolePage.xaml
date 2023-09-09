@@ -1,0 +1,32 @@
+﻿<Page x:Class="EveryThingAssist_GUI.Pages.ConsolePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:EveryThingAssist_GUI.Pages"
+      mc:Ignorable="d"
+      Title="ConsolePage">
+    <Grid x:Name="consoleGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <ListBox x:Name="consoleListBox"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+            <TextBox x:Name="InputTextBlock" Text="input" TextWrapping="Wrap" AcceptsReturn="True"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Button x:Name="InputTextButton" Click="InputTextButton_OnClick" Content="回答を決定"/>
+        </Grid>
+    </Grid>
+</Page>

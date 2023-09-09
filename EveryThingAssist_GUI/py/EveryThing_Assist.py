@@ -2,19 +2,24 @@ import ctypes
 import sys
 import os
 import json
-from Commands import help
 from bardapi import Bard
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from Commands import help
 
-if os.path.exists('token.json'):
+token_path = os.path.join(os.path.dirname(sys.executable), 'token.json')
+
+if os.path.exists(token_path):
     pass
 else:
     check_token = {'token': '1PSID'}
-    with open('token.json', 'w') as f:
+    with open(token_path, 'w') as f:
         json.dump(check_token, f)
-        print('token.json created plz edit it file. file location is RootDirectory/token.json\r\n')
+        print(f'token.json created plz edit it file. file location is {token_path}\r\n')
+        input("Press Enter to continue...")
+        exit()
 
 while True:
-    with open('token.json') as f:
+    with open(token_path) as f:
         data = json.load(f)
     api_token = data['token']
     try:
@@ -28,9 +33,14 @@ while True:
                                                 "\rFIX Solution:"
                                                 " Start your browser in private mode and log in to BardAI to retrieve "
                                                 "your 1PSID.", 1)
+            input("Press Enter to continue...")
+            break
+            exit()
         else:
-            # 具体的なエラーメッセージをキャプチャしない他の例外の場合
-            print("予期しないエラーが発生しました: ", e)
+            print("An unexpected error has occurred: ", e)
+            input("Press Enter to continue...")
+            break
+            exit()
     try:
         print('if you want end talk please input exit_app\r\nplease input anything\r\n')
         input_text = input(':')
@@ -57,4 +67,6 @@ while True:
     except Exception as e:
         print('Sorry, there was an unexplained error. Terminate the application.\r\n')
         print(e)
+        input()
+        break
         exit()

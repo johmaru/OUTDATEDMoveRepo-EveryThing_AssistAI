@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
+﻿using System.Windows;
+using System;
+using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
+using Application = System.Windows.Application;
+using System.Windows.Forms;
+using System.Drawing;
+using System.IO;
+using System.Resources;
+using EveryThingAssist_GUI.Class.APP;
+
 
 namespace EveryThingAssist_GUI
 {
@@ -13,5 +17,6 @@ namespace EveryThingAssist_GUI
     /// </summary>
     public partial class App : Application
     {
+      
     }
 }

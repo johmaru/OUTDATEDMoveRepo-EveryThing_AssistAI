@@ -5,11 +5,11 @@ block_cipher = None
 
 
 a = Analysis(
-    ['EveryThing_Assist.py'],
+    ['Core\\Everything_Assist.py'],
     pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=[],
+    hiddenimports=['Commands'],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -28,7 +28,7 @@ exe = EXE(
     a.zipfiles,
     a.datas,
     [],
-    name='EveryThing_Assist',
+    name='Everything_Assist',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
